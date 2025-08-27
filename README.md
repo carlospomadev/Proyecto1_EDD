@@ -14,15 +14,22 @@ Sirve como ejemplo práctico de programación básica en Java y de organización
 Verificar la instalación con:
 ```bash
 java -version
+```
 
 ## 4. Intrucciones de uso 
 - Clonar el repositorio:
-'git clone https://github.com/TU_USUARIO/Proyecto1_EDD.git
+```bash
+git clone https://github.com/TU_USUARIO/Proyecto1_EDD.git
 cd Proyecto1_EDD'
+```
 - Compilar los archivos fuentes ubicados en src/:
+```bash
 'javac src/*.java -d bin'
+```
 - Ejecutar el programa principal:
+```bash
 'java -cp bin Main'
+```
 
 ## 5. Autoría y Licencia
 Carlos Poma Ramirez
