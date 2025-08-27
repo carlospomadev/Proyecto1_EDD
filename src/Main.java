@@ -1,12 +1,37 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase principal del sistema de gestión de clientes, pájaros y ventas.
+ * <p>
+ * Permite:
+ * <ul>
+ *   <li>Registrar, eliminar, modificar y listar clientes.</li>
+ *   <li>Registrar y listar pájaros.</li>
+ *   <li>Registrar ventas asociando clientes con pájaros.</li>
+ *   <li>Visualizar las ventas realizadas.</li>
+ * </ul>
+ *
+ * Los datos se almacenan en memoria mediante colecciones {@link ArrayList}.
+ *
+ * @author Carlos
+ * @version 1.0
+ */
+
 public class Main {
 
+    /** Lista de clientes registrados en el sistema. */
     static ArrayList<Cliente> clientes = new ArrayList<>();
+    /** Lista de pájaros disponibles en la tienda. */
     static ArrayList<Pajaro> pajaros = new ArrayList<>();
+    /** Lista de ventas realizadas. */
     static ArrayList<Venta> ventas = new ArrayList<>();
 
+    /**
+     * Método principal que inicializa el menú de interacción con el usuario.
+     *
+     * @param args argumentos de línea de comandos (no utilizados en este programa).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int opcion;
@@ -29,6 +54,11 @@ public class Main {
             }
         }while (opcion !=5);
     }
+    /**
+     * Permite la gestión de clientes: alta, baja, modificación y listado.
+     *
+     * @param sc objeto {@link Scanner} para la entrada de datos por consola.
+     */
     static void gestionarClientes(Scanner sc) {
         System.out.println("\n***Gestión de Clientes***");
         System.out.println("1.Alta");
@@ -95,6 +125,11 @@ public class Main {
         }
 
     }
+    /**
+     * Permite la gestión de pájaros: alta y listado.
+     *
+     * @param sc objeto {@link Scanner} para la entrada de datos por consola.
+     */
     static void gestionarPajaros(Scanner sc) {
         System.out.println("\n***Gestión de Pájaros***");
         System.out.println("1.Alta");
@@ -115,7 +150,11 @@ public class Main {
             case 2 -> listarPajaros();
         }
     }
-
+    /**
+     * Registra una venta seleccionando un cliente y uno o muchos pájaros.
+     *
+     * @param sc objeto {@link Scanner} para la entrada de datos por consola.
+     */
     static void realizarVentas(Scanner sc){
         if(clientes.isEmpty() || pajaros.isEmpty()) {
             System.out.println("Error. Primero registra clientes y pájaros.");
@@ -144,6 +183,9 @@ public class Main {
         ventas.add(venta);
         System.out.println("Venta registrada");
     }
+    /**
+     * Muestra todas las ventas registradas en el sistema.
+     */
     static void mostrarVentas(){
         System.out.println("\n***Ventas registradas***");
 
@@ -155,11 +197,17 @@ public class Main {
             v.mostrarInfo();
         }
     }
+    /**
+     * Lista en consola los clientes registrados.
+     */
     static void listarClientes(){
         for (int i = 0; i < clientes.size(); i++){
             System.out.println((i+1) + "." + clientes.get(i).getNombre());
         }
     }
+    /**
+     * Lista en consola los pájaros registrados, mostrando especie y características.
+     */
     static void listarPajaros(){
         for (int i = 0; i<pajaros.size();i++){
             System.out.println((i+1) + "." + pajaros.get(i).getEspecie() + " - " + pajaros.get(i));
