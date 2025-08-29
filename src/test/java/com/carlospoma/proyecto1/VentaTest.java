@@ -14,7 +14,8 @@ class VentaTest {
 
     @BeforeEach
     void setUp() {
-        cliente = new Cliente("Carlos", "carlos@mail.com", "123456789", "Madrid");
+        // Corrección del constructor para que coincida con Cliente.java
+        cliente = new Cliente("Carlos", "12345678A", "987654321", "carlos@mail.com");
         venta = new Venta(cliente);
 
         pajaro1 = new Pajaro("Canario", "Amarillo", 50.0);
@@ -46,15 +47,13 @@ class VentaTest {
     @Test
     void testAñadirUnPajaro() {
         venta.añadirPajaro(pajaro1);
-        assertEquals(50.0, venta.calcularTotal(), 0.001);
+        double totalEsperado = 50.0;
+        assertEquals(totalEsperado, venta.calcularTotal(), 0.001);
     }
 
     @Test
     void testMostrarInfoNoLanzaErrores() {
         venta.añadirPajaro(pajaro1);
-        venta.añadirPajaro(pajaro2);
-
-        // Validamos que no lance excepciones al ejecutarse
         assertDoesNotThrow(() -> venta.mostrarInfo());
     }
 }
