@@ -1,3 +1,4 @@
+package com.carlospoma.proyecto1;
 /**
  * Representa un cliente dentro del sistema.
  * <p>

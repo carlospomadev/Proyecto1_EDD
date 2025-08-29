@@ -1,3 +1,5 @@
+package com.carlospoma.proyecto1;
+
 /**
  * Representa un pájaro disponible en la tienda.
  * <p>

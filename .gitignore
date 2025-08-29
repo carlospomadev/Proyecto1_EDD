@@ -1,0 +1,15 @@
+# Maven
+/target/
+
+# Logs y temporales
+*.log
+*.tmp
+*.swp
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
